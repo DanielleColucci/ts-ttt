@@ -62,4 +62,13 @@ function handleClick(evt: MouseEvent): void {
 
   const sqIdx = parseInt(evt.target.id[2])
   if (isNaN(sqIdx) || board[sqIdx] || winner) return 
+
+  evt.target.classList.add(`${turn === 1 ? 'player1' : 'player2'}`)
+
+  placePiece(sqIdx)
+  render()
+}
+
+function placePiece(idx: number): void {
+  board[idx] = turn
 }
