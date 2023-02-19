@@ -50,3 +50,10 @@ function updateMessage() {
         messageEl.textContent = `player ${turn === 1 ? '1' : '2'} winds`;
     }
 }
+function handleClick(evt) {
+    if (!(evt.target instanceof HTMLElement))
+        return;
+    const sqIdx = parseInt(evt.target.id[2]);
+    if (isNaN(sqIdx) || board[sqIdx] || winner)
+        return;
+}

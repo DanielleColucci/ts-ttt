@@ -52,3 +52,10 @@ function updateMessage(): void {
     messageEl.textContent = `player ${turn === 1 ? '1' : '2'} winds`
   }
 }
+
+function handleClick(evt: MouseEvent): void {
+  if (!(evt.target instanceof HTMLElement)) return 
+
+  const sqIdx = parseInt(evt.target.id[2])
+  if (isNaN(sqIdx) || board[sqIdx] || winner) return 
+}
