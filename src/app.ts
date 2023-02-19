@@ -27,6 +27,10 @@ function init(): void {
   turn = 1
   winner = false
   tie = false
+  render()
+}
+
+function render(): void {
   updateBoard()
   updateMessage()
 }

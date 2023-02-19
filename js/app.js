@@ -23,6 +23,9 @@ function init() {
     turn = 1;
     winner = false;
     tie = false;
+    render();
+}
+function render() {
     updateBoard();
     updateMessage();
 }
