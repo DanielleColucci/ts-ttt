@@ -19,10 +19,14 @@ const buttonEl = document.getElementById('reset-button');
 const boardEl = document.querySelector('.board');
 // event handlers
 boardEl.addEventListener('click', handleClick);
+buttonEl?.addEventListener('click', init);
 // functions 
 init();
 function init() {
     board = new Array(9).fill(0);
+    squareEls.forEach(sq => {
+        sq.classList.remove(sq.classList[1]);
+    });
     turn = 1;
     winner = false;
     tie = false;
