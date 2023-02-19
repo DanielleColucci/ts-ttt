@@ -17,6 +17,10 @@ let turn: number, winner: boolean, tie: boolean, board: number[]
 const squareEls = document.querySelectorAll('.sqr')
 const messageEl = document.getElementById('message')!
 const buttonEl = document.getElementById('reset-button')
+const boardEl = document.querySelector<HTMLElement>('.board')!
+
+// event handlers
+boardEl.addEventListener('click', handleClick)
 
 // functions 
 

@@ -16,6 +16,9 @@ let turn, winner, tie, board;
 const squareEls = document.querySelectorAll('.sqr');
 const messageEl = document.getElementById('message');
 const buttonEl = document.getElementById('reset-button');
+const boardEl = document.querySelector('.board');
+// event handlers
+boardEl.addEventListener('click', handleClick);
 // functions 
 init();
 function init() {
