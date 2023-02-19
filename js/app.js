@@ -50,7 +50,7 @@ function updateMessage() {
         messageEl.textContent = "it's a tie!";
     }
     else {
-        messageEl.textContent = `player ${turn === 1 ? '1' : '2'} winds`;
+        messageEl.textContent = `player ${turn === 1 ? '1' : '2'} wins!`;
     }
 }
 function handleClick(evt) {
