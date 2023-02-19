@@ -68,6 +68,7 @@ function handleClick(evt: MouseEvent): void {
   placePiece(sqIdx)
   checkForTie()
   checkForWinner()
+  switchPlayerTurn()
   render()
 }
 
@@ -90,4 +91,10 @@ function checkForWinner(): void {
       winner = true
     }
   })
+}
+
+function switchPlayerTurn(): void {
+  if (!winner) {
+    turn *= -1
+  }
 }
