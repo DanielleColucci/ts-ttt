@@ -24,6 +24,7 @@ function init() {
     winner = false;
     tie = false;
     updateBoard();
+    updateMessage();
 }
 function updateBoard() {
     board.forEach((sq, idx) => {
@@ -34,4 +35,15 @@ function updateBoard() {
         else
             squareEls[idx].textContent = '';
     });
+}
+function updateMessage() {
+    if (!winner && !tie) {
+        messageEl.textContent = `player ${turn === 1 ? '1' : '2'}'s turn`;
+    }
+    else if (!winner && tie) {
+        messageEl.textContent = "it's a tie!";
+    }
+    else {
+        messageEl.textContent = `player ${turn === 1 ? '1' : '2'} winds`;
+    }
 }

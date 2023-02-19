@@ -15,7 +15,7 @@ let turn: number, winner: boolean, tie: boolean, board: number[]
 
 // cached element references 
 const squareEls = document.querySelectorAll('.sqr')
-const messageEl = document.getElementById('message')
+const messageEl = document.getElementById('message')!
 const buttonEl = document.getElementById('reset-button')
 
 // functions 
@@ -28,6 +28,7 @@ function init(): void {
   winner = false
   tie = false
   updateBoard()
+  updateMessage()
 }
 
 function updateBoard(): void {
@@ -36,4 +37,14 @@ function updateBoard(): void {
     else if (sq === -1) squareEls[idx].textContent = 'O'
     else squareEls[idx].textContent = ''
   })
+}
+
+function updateMessage(): void {
+  if (!winner && !tie) {
+    messageEl.textContent = `player ${turn === 1 ? '1' : '2'}'s turn`
+  } else if (!winner && tie) {
+    messageEl.textContent = "it's a tie!"
+  } else {
+    messageEl.textContent = `player ${turn === 1 ? '1' : '2'} winds`
+  }
 }
