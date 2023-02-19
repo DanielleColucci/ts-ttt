@@ -18,3 +18,13 @@ const squareEls = document.querySelectorAll('.sqr')
 const messageEl = document.getElementById('message')
 const buttonEl = document.getElementById('reset-button')
 
+// functions 
+
+init()
+
+function init() {
+  board = new Array(9).fill(0)
+  turn = 1
+  winner = false
+  tie = false
+}
