@@ -66,9 +66,16 @@ function handleClick(evt: MouseEvent): void {
   evt.target.classList.add(`${turn === 1 ? 'player1' : 'player2'}`)
 
   placePiece(sqIdx)
+  checkForTie()
   render()
 }
 
 function placePiece(idx: number): void {
   board[idx] = turn
+}
+
+function checkForTie(): void {
+  tie = board.every(sq => {
+    return sq 
+  })
 }

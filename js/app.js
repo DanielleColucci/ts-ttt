@@ -61,8 +61,14 @@ function handleClick(evt) {
         return;
     evt.target.classList.add(`${turn === 1 ? 'player1' : 'player2'}`);
     placePiece(sqIdx);
+    checkForTie();
     render();
 }
 function placePiece(idx) {
     board[idx] = turn;
+}
+function checkForTie() {
+    tie = board.every(sq => {
+        return sq;
+    });
 }
