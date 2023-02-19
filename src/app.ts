@@ -22,9 +22,18 @@ const buttonEl = document.getElementById('reset-button')
 
 init()
 
-function init() {
+function init(): void {
   board = new Array(9).fill(0)
   turn = 1
   winner = false
   tie = false
+  updateBoard()
+}
+
+function updateBoard(): void {
+  board.forEach((sq, idx) => {
+    if (sq === 1) squareEls[idx].textContent = 'X'
+    else if (sq === -1) squareEls[idx].textContent = 'O'
+    else squareEls[idx].textContent = ''
+  })
 }

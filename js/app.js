@@ -23,4 +23,15 @@ function init() {
     turn = 1;
     winner = false;
     tie = false;
+    updateBoard();
+}
+function updateBoard() {
+    board.forEach((sq, idx) => {
+        if (sq === 1)
+            squareEls[idx].textContent = 'X';
+        else if (sq === -1)
+            squareEls[idx].textContent = 'O';
+        else
+            squareEls[idx].textContent = '';
+    });
 }
