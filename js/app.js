@@ -62,6 +62,7 @@ function handleClick(evt) {
     evt.target.classList.add(`${turn === 1 ? 'player1' : 'player2'}`);
     placePiece(sqIdx);
     checkForTie();
+    checkForWinner();
     render();
 }
 function placePiece(idx) {
@@ -70,5 +71,15 @@ function placePiece(idx) {
 function checkForTie() {
     tie = board.every(sq => {
         return sq;
+    });
+}
+function checkForWinner() {
+    winningCombos.forEach(combo => {
+        let sum = combo.reduce((acc, sq) => {
+            return acc + board[sq];
+        }, 0);
+        if (Math.abs(sum) === 3) {
+            winner = true;
+        }
     });
 }

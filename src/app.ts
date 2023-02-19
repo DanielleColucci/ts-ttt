@@ -67,6 +67,7 @@ function handleClick(evt: MouseEvent): void {
 
   placePiece(sqIdx)
   checkForTie()
+  checkForWinner()
   render()
 }
 
@@ -77,5 +78,16 @@ function placePiece(idx: number): void {
 function checkForTie(): void {
   tie = board.every(sq => {
     return sq 
+  })
+}
+
+function checkForWinner(): void {
+  winningCombos.forEach(combo => {
+    let sum = combo.reduce((acc, sq) => {
+      return acc + board[sq]
+    }, 0)
+    if (Math.abs(sum) === 3) {
+      winner = true
+    }
   })
 }
